@@ -1,0 +1,31 @@
+#服务器相关配置
+server:
+  port: 8080
+
+#数据源相关配置
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@192.168.9.6:1521:uaphn
+    username: uap
+    password: uap
+    driver-class-name: oracle.jdbc.OracleDriver
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 15
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: DatebookHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+    type: com.zaxxer.hikari.HikariDataSource
+
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/library?useUnicode=true&characterEncoding=utf8&useSSL=true&serverTimezone=Asia/Shanghai&autoReconnect=true
+#    username: root
+#    password: 123
+
+
+
+
