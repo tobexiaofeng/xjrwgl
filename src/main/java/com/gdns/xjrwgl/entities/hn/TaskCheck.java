@@ -10,15 +10,23 @@ import java.util.Date;
 public class TaskCheck {
     private String id;
     private String name;
-    private Date startTime;
-    private Date endTime;
+    private String startTime;
+    private String endTime;
 
-    //任务进度
+    /**
+     * 任务进度
+     */
     private Integer taskRate;
-    //任务状态
+    /**
+     * 任务状态
+     */
     private String taskStatus;
+    /**
+     * 地势ID
+     */
+    private String locationId;
     private String creator;
-    private Date createTime;
+    private String createTime;
     private String lifestyle;
 
     public String getId() {
@@ -37,19 +45,19 @@ public class TaskCheck {
         this.name = name;
     }
 
-    public Date getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Date startTime) {
+    public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 
-    public Date getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Date endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
 
@@ -77,11 +85,11 @@ public class TaskCheck {
         this.creator = creator;
     }
 
-    public Date getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 
@@ -93,17 +101,26 @@ public class TaskCheck {
         this.lifestyle = lifestyle;
     }
 
+    public String getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(String locationId) {
+        this.locationId = locationId;
+    }
+
     @Override
     public String toString() {
         return "TaskCheck{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", startTime=" + startTime +
-                ", endTime=" + endTime +
+                ", startTime='" + startTime + '\'' +
+                ", endTime='" + endTime + '\'' +
                 ", taskRate=" + taskRate +
                 ", taskStatus='" + taskStatus + '\'' +
+                ", locationId='" + locationId + '\'' +
                 ", creator='" + creator + '\'' +
-                ", createTime=" + createTime +
+                ", createTime='" + createTime + '\'' +
                 ", lifestyle='" + lifestyle + '\'' +
                 '}';
     }

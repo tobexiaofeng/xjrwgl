@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gdns.xjrwgl.mapper.TaskCheckManagementMapper">
+    <insert id="createTask">
+    insert into ext_hn_t_xj_rw values(#{id},#{name},to_date(#{startTime},'yyyy-mm-dd'),
+    to_date(#{endTime},'yyyy-mm-dd'),#{taskRate},#{taskStatus},#{locationId},#{creator},
+    to_date(#{createTime},'yyyy-mm-dd'),#{lifestyle})
+  </insert>
+
+    <update id="modifyTask">
+        update ext_hn_t_xj_rw set RWMC=#{name},RWKSSJ=to_date(#{startTime},'yyyy-mm-dd'),
+        RWJSSJ=to_date(#{endTime},'yyyy-mm-dd'),RWJD=#{taskRate},RWZT_BM=#{taskStatus},
+        DS_ID=#{locationId},CJR=#{creator},CJSJ=to_date(#{createTime},'yyyy-mm-dd'),
+        SMZQ=#{lifestyle} where id=#{id}
+    </update>
+
+    <delete id="deleteTaskById">
+        delete from ext_hn_t_xj_rw where id = #{id}
+    </delete>
+
+</mapper>
